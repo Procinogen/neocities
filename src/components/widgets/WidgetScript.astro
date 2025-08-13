@@ -1,0 +1,50 @@
+---
+---
+
+<div id="widget" class="border-[10px] bg-white flex" style="position: absolute;">
+    <!-- <button><p>idfk</p></button> -->
+    <iframe width="315" height="315" src="https://www.youtube.com/embed/videoseries?si=dv3zOLVORiSZS4sp&amp;list=PLs9zwqXsceUg056gmOhedcqut3hXLZjcO" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<script>
+
+    // Declare this function for reference
+    let disableSelect = (ev: Event) => { ev.preventDefault(); }
+
+    // Add all the proper event listeners once the page is done loading
+    document.addEventListener("astro:page-load", addListeners)
+    //window.onload = addListeners;
+    var offX: number;
+    var offY: number;
+
+    // Grab the widget and add the mousedown event
+    // also listen for mouseup
+    function addListeners(){
+        document.getElementById("widget")!.addEventListener('mousedown', mouseDown, false);
+        window.addEventListener('mouseup', mouseUp, false);
+    }
+
+    // Remove all the listeners once the user lets go
+    function mouseUp() {
+        window.removeEventListener('mousemove', divMove, true);
+        document.removeEventListener('selectstart', disableSelect);
+    }
+
+    // All the math starts when the user grabs the widget
+    function mouseDown(e: { clientX: number; clientY: number; }) {
+        window.addEventListener('mousemove', divMove, true);
+        var div = document.getElementById('widget')!;
+
+        // Offset the top and left for the widget so that it doesn't jump when the user grabs it
+        offX = e.clientX - div.offsetLeft;
+        offY = e.clientY - div.offsetTop;
+        document.addEventListener('selectstart', disableSelect);
+    }
+
+    function divMove(e: { clientY: number; clientX: number; }) {
+        var div = document.getElementById('widget')!;
+        div.style.top = (e.clientY - offY) + 'px';
+        div.style.left = (e.clientX - offX) + 'px';
+    }
+
+</script>

@@ -1,0 +1,51 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import ReplacementSwap from 'astro-vtbot/components/ReplacementSwap.astro';
+import WidgetScript from '../components/widgets/WidgetScript.astro';
+import Navbar from '../components/Navbar.astro'
+import '../stylings/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<!-- ok so this is really messy but here's a brief overview of your code -->
+		<ClientRouter />
+		<ReplacementSwap />
+		
+		<!-- So <ClientRouter /> is there to enable SPA functionality in Astro -->
+		<!-- <ReplacementSwap /> is a workaround to tell Astro to only refresh certain parts of the page, got it froma astro-vtbot -->
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>procinogen.neocities.org</title>
+	</head>
+
+	<body>
+
+		<Navbar />
+
+		<WidgetScript />
+		
+		<!-- data-vtbot-replace is here to say what to replace? -->
+		<!-- go here for more info: https://events-3bg.pages.dev/library/ReplacementSwap/ -->
+		<main data-vtbot-replace="main" class="flex justify-center"><div><slot /></div></main>
+		<!-- anyways, the <slot /> element is what populates the page. you already know how this works. -->
+
+
+	</body>
+
+</html>
+
+<style>
+	html,
+	body {
+		/* margin: 0%;
+		width: 100%;
+		height: 100%; */
+		background-image: url("../assets/spacebackground.gif");
+	}
+</style>

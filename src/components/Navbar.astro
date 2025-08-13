@@ -1,0 +1,43 @@
+---
+---
+
+<div id="menu" class="float-left min-h-screen p-8">
+    <ul class="menulink">
+        <li><p><a href="/">homepage</a></p></li>
+        <li><p><a href="/blog">blog</p></li>
+        <li><p><a href="/testpage">lorem</a></p></li>
+        <li><p>ipsum</p></li>
+    </ul>
+</div>
+
+<style>
+
+    #menu {
+        background-color: yellow;
+    }
+
+    p {
+        color: black;
+        padding-bottom: 2rem;
+    }
+
+    p:hover {
+    /*background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);*/
+    background: linear-gradient(to right, blue, cyan , lime, orange, red, orange, lime, cyan, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 2s ease-in-out infinite;
+    background-size: 400% 100%;
+    text-decoration: underline;
+    }
+
+
+
+    @keyframes rainbow_animation {
+        0%,100% { background-position: 0 0; }
+        50% { background-position: 100% 0; }
+
+    }
+
+</style>
