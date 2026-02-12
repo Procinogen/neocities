@@ -15,9 +15,31 @@ const response = await fetch('https://raw.githubusercontent.com/Procinogen/neoci
     <br>
 
         <div id="post-body">
+<<<<<<< HEAD
             {response.body}
         </div>
     
     </div>
+=======
+            testing
+        </div>
+    
+    </div>
+
+    <script>
+
+    const response = await fetch('https://raw.githubusercontent.com/Procinogen/neocities-blog-posts/refs/heads/main/test-blog-post.html');
+    const htmlContent = await response.text();
+
+    function loadPost() {
+            let postBody = document.getElementById('post-body');
+            postBody?.insertAdjacentHTML('beforeend', htmlContent)
+    }
+
+    document.addEventListener('astro:page-load', loadPost, {once:true})
+    document.addEventListener('astro:after-swap', loadPost)
+
+    </script>
+>>>>>>> 41879e4 (Added functionality to blog section, is now able to lookup raw HTML)
 
 </Stock>
