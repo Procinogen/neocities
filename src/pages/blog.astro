@@ -1,5 +1,7 @@
 ---
 import Stock from "../layouts/Stock.astro";
+const response = await fetch('https://raw.githubusercontent.com/Procinogen/neocities-blog-posts/refs/heads/main/test-blog-post.astro');
+const testResp = response.body;
 ---
 
 <Stock>
@@ -14,7 +16,7 @@ import Stock from "../layouts/Stock.astro";
     <br>
 
         <div id="post-body">
-            {response.body}
+            <p>{testResp}</p>
         </div>
     
     </div>

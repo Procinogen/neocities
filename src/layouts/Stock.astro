@@ -4,7 +4,6 @@ import ReplacementSwap from 'astro-vtbot/components/ReplacementSwap.astro';
 import WidgetScript from '../components/widgets/WidgetScript.astro';
 import Navbar from '../components/Navbar.astro'
 import '../stylings/global.css'
-import BlogFetch from '../components/BlogFetch.astro';
 ---
 
 <!doctype html>
@@ -14,8 +13,7 @@ import BlogFetch from '../components/BlogFetch.astro';
 		<!-- ok so this is really messy but here's a brief overview of your code -->
 		<ClientRouter />
 		<ReplacementSwap />
-		<BlogFetch />
-
+		
 		<!-- So <ClientRouter /> is there to enable SPA functionality in Astro -->
 		<!-- <ReplacementSwap /> is a workaround to tell Astro to only refresh certain parts of the page, got it froma astro-vtbot -->
 
