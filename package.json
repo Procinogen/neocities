@@ -9,9 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.5.3",
     "@astrojs/tailwind": "^5.1.5",
     "astro": "^5.16.9",
-    "astro-vtbot": "^2.1.7",
+    "astro-vtbot": "^2.1.11",
     "tailwindcss": "^3.4.17"
   }
 }
