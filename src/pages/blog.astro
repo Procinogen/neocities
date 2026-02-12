@@ -1,5 +1,7 @@
 ---
 import Stock from "../layouts/Stock.astro";
+const response = await fetch('https://raw.githubusercontent.com/Procinogen/neocities-blog-posts/refs/heads/main/test-blog-post.astro')
+const post = response.body
 ---
 
 <Stock>
@@ -14,12 +16,12 @@ import Stock from "../layouts/Stock.astro";
     <br>
 
         <div id="post-body">
-            testing
+            {post}
         </div>
     
     </div>
 
-    <script>
+    <!-- <script>
 
     const response = await fetch('https://raw.githubusercontent.com/Procinogen/neocities-blog-posts/refs/heads/main/test-blog-post.html');
     const htmlContent = await response.text();
@@ -32,6 +34,6 @@ import Stock from "../layouts/Stock.astro";
     document.addEventListener('astro:page-load', loadPost, {once:true})
     document.addEventListener('astro:after-swap', loadPost)
 
-    </script>
+    </script> -->
 
 </Stock>

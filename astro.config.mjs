@@ -7,5 +7,6 @@ import vtbot from 'astro-vtbot';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), vtbot()]
+  integrations: [tailwind(), vtbot()],
+  output: 'server'
 });
